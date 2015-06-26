@@ -1,0 +1,1 @@
+web: gunicorn rostertraders.wsgi --log-file -
