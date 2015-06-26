@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block hero_block %}
+<div class="pad-center">
+    <h1>Welcome to Roster Traders</h1>
+    <p class="lead">Where you can trade shares of players like a stock exhcnage!</p>
+</div>
+{% endblock %}
+
+{% block body_block %}
+
+{% if user and not user.is_anonymous %}
+
+<div class="pad-center">
+  <form action="/players">
+  <input class="btn btn-lg btn-primary" type="submit" value="Start Trading!">
+  </form>
+{% else %}
+  <a class="lead" href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook to start trading</a>
+{% endif %}
+
+</div>
+{% endblock%}

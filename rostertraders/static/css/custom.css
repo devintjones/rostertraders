@@ -1,0 +1,74 @@
+body {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+.pad-center {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+table.center {
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;
+}
+
+.div-center {
+	margin-left:auto;
+	margin-right:auto;
+	float:middle;
+}
+
+.player-stats {
+	width:50%;
+	padding:40px 15px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.portfolio-contents{
+	width:40%;
+}
+
+.portfolio-value{
+	width:25%;
+}
+
+.dash{	
+	padding:40px 15px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+input[type=number]{
+	width: 60px; 
+}
+
+.messages{
+	padding-top: 60px;
+}
