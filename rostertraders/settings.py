@@ -22,6 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "oxob_s)%o5f^#+e^x*l^rn9d3^*ds5^q_wbed1s4j17wx#lrmn"
 
+SOCIAL_AUTH_FACEBOOK_KEY    = os.environ["RT_FB_APPID"]
+SOCIAL_AUTH_FACEBOOK_SECRET = os.environ["RT_FB_SECRET"]
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -37,9 +41,16 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
     'home',
     #'dashboard',
 )
+
+AUTHENTICATION_BACKENDS = (
+	'social.backends.facebook.FacebookOAuth2',
+	'django.contrib.auth.backends.ModelBackend',
+	)
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -65,10 +76,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+		'social.apps.django_app.context_processors.backends',
+		'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'rostertraders.wsgi.application'
 
