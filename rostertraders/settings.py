@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'social.apps.django_app.default',
     'home',
     'dashboard',
+    'players',
 )
 
 AUTHENTICATION_BACKENDS = (

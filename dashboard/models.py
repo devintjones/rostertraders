@@ -29,10 +29,12 @@ class Stats(models.Model):
     steals = models.IntegerField(db_column='STEALS', blank=True, null=True)  # Field name made lowercase.
     rebounds = models.IntegerField(db_column='REBOUNDS', blank=True, null=True)  # Field name made lowercase.
     assists = models.IntegerField(db_column='ASSISTS', blank=True, null=True)  # Field name made lowercase.
+    id     = models.IntegerField(primary_key=True)
 
     class Meta:
         managed = False
         db_table = 'STATS'
+	unique_together = (('pid','gameid'),)
 
 
 class AuthUser(models.Model):

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+
+{% if messages %}
+	{% for message in messages %}
+	<div class="pad-center messages">
+		<p class="lead"> {{ message }}</p>
+	</div>
+	{% endfor %}
+{% endif %}
+
+
+<div class="player-stats container" >
+	{% if player_stats %}
+	<h2>{{ player_name }} Stats</h2>
+
+	<table class="table table-bordered table-striped table-condensed center">
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Points</th>
+				<th>Steals</th>
+				<th>Rebounds</th>
+				<th>Assists</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in player_stats %}
+			<tr>
+				<td>{{ row.gameid }}</td>
+				<td>{{ row.points }}</td>
+				<td>{{ row.steals }}</td>
+				<td>{{ row.rebounds }}</td>
+				<td>{{ row.assists }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% else %}
+    <p>No Stats in DB!.</p>
+{% endif %}
+</div>
+{% endblock %}
+

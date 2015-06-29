@@ -30,7 +30,7 @@
 			<tbody>
 				{% for player in pf_contents %}
 				<tr>
-					<td><a href="/app1/{{ player.pid }}/">{{ player.pid.name }}</a></a></td>	
+					<td><a href="/player/{{ player.pid.pid }}/">{{ player.pid.name }}</a></td>
 					<td>{{ player.shares }}</a></td>
 					<td>${{ player.player_pf_val|floatformat:2 }}</td>
 					<td><input type="number" min="0" step="5" name="{{ player.pid_id }}" ></td>
@@ -88,7 +88,7 @@
 		<tbody>
 			{% for player in player_list %}
 			<tr>
-				<td><a href="/app1/{{ player.pid }}/">{{ player.pid.name }}</a></td>
+				<td><a href="/player/{{ player.pid.pid }}/">{{ player.pid.name }}</a></td>
 				<td>${{ player.value|floatformat:2 }}</td>
 				<td><input type="number" min="0" step="5" name="{{ player.pid_id}}"></td>
 			</tr>
